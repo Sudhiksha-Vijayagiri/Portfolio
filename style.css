@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap');
+
+:root {
+  --bg-light: #f5f7fa;
+  --surface: #ffffff;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --accent-blue: #2563eb;
+  --accent-violet: #7c3aed;
+  --accent-green: #0ea5e9;
+  --radius: 1rem;
+}
+
+/* Base Layout */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #f7faff 0%, #eef2ff 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* HERO */
+header.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+header.hero h1 span {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header.hero p {
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Profile Image */
+header.hero img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 1rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border: 4px solid #fff;
+}
+/* Profile image styling */
+.profile-img {
+  width: 240px; /* a bit bigger */
+  height: 240px;
+  border-radius: 50%;
+  object-fit: contain;          /* 🔥 key change: shows full image */
+  background-color: #fff;       /* keeps background neat for transparent areas */
+  padding: 8px;                 /* spacing around inside the border */
+  margin-top: 2rem;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    padding: 6px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+
+/* Contact links (horizontal) */
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.contacts a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.contacts a:hover {
+  color: var(--accent-violet);
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.skills-grid, .projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Project media */
+.project-img, .project-video {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Vertical Video Fix */
+.project-video.vertical {
+  width: auto;
+  max-height: 500px;
+  aspect-ratio: 9 / 16;
+  display: block;
+  margin: 1rem auto;
+  border-radius: var(--radius);
+  background: #000;
+  object-fit: contain;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+/* Removed creativity tagline */
+footer p { margin: 0; }
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact-buttons .btn {
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+  color: #fff;
+  text-decoration: none;          /* removes underline */
+  border: none;                   /* removes any border */
+  border-radius: 2rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-violet));
+}
+.btn:visited,
+.btn:active {
+  color: #fff;                    /* prevents color changing after click */
+  text-decoration: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
